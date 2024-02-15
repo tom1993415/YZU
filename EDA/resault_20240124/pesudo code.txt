@@ -1,0 +1,40 @@
+Function SimulatedAnnealing(edges,nodes):
+    begin
+        temperature = 1.0 // 初始溫度
+	freezeTemperature =  0.00001 //冷卻溫度
+        alpha = 0.95 //冷卻速率
+	freezeTime = 600000 //冷卻時間
+	endTime = currentTime + freezeTime //停止時間點
+	attempts = 10000 //嘗試次數
+		
+	foreach n (nodes) do   // 隨機產生初始解
+			radom node in to {0,1}
+	end foreach
+		
+        while temperature > freezeTemperature && currentTime < endTime do // 直到達到停止溫度或冷卻時間到
+		
+		for i (0 to attempts) do //嘗試次數	
+				
+			if set1>set2 then //計算set1 set2 node數量選擇這次要動的edge node
+				selectEdge = set2
+			else
+				selectEdge = set1
+			end if
+					
+			while ramdomNodeEdge not equal selectEdge do //ramdom選擇一個node判斷是否符合要動的edge
+				ramdomNodeEdge = RandomNumber()	//重新選一個node
+			end if
+				
+			移動選擇的node
+			重新計算新的cost
+				
+                if newCost < currentCost or newCose / temperature < RandomNumber() then // 根據機率接受新解
+                        current_solution = new_solution // 接受新解
+                 end if
+                    
+                temperature = temperature * alpha // 降低溫度
+			end for
+		end while
+    end
+
+    return current_solution // 返回最終解
