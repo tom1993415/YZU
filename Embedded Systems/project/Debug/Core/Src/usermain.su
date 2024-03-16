@@ -1,0 +1,4 @@
+../Core/Src/usermain.c:6:6:UART_Init	4	static
+../Core/Src/usermain.c:11:6:UID_Init	24	static
+../Core/Src/usermain.c:22:6:usermain_init	8	static
+../Core/Src/usermain.c:31:6:usermain_loop	32	static

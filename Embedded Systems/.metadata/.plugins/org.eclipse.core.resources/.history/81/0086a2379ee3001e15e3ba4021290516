@@ -1,0 +1,33 @@
+#include "usermain.h"
+#include "stm32f7xx.h"
+#include <stdio.h>
+
+// Function to initialize UART for printf
+void UART_Init(void) {
+    // Your UART initialization code here
+}
+
+// Function to initialize UID reading
+void UID_Init(void) {
+    // Read UID
+    uint32_t uid0 = HAL_GetUIDw0();
+    uint32_t uid1 = HAL_GetUIDw1();
+    uint32_t uid2 = HAL_GetUIDw2();
+
+    // Print UID
+    printf("UID: %08X%08X%08X\n", uid0, uid1, uid2);
+}
+
+// User-defined initialization function
+void usermain_init(void) {
+    // Initialize UART
+    UART_Init();
+
+    // Initialize UID reading
+    UID_Init();
+}
+
+// User-defined loop function
+void usermain_loop(void) {
+    // Your application loop code here
+}
